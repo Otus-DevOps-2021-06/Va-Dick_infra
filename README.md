@@ -28,6 +28,6 @@ EOF
 
 ## IP:
 ```
-bastion_IP = 35.198.167.169
-someinternalhost_IP = 10.156.0.3
+bastion_IP = 178.154.255.227
+someinternalhost_IP = 10.128.0.6
 ```
