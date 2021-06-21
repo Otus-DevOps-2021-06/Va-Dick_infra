@@ -26,3 +26,9 @@ variable "service_account_key_file" {
 variable "res_zone" {
   description = "This is resource zone"
 }
+variable "region_id" {
+  description = "ID of the availability zone where the target group resides"
+}
+variable "count_app" {
+  description = "Number of virtual machines"
+}
