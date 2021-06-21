@@ -1,5 +1,5 @@
 resource "yandex_lb_network_load_balancer" "reddit_lb_network_load_balancer" {
-  name = "reddit-network-load-balancer"
+  name      = "reddit-network-load-balancer"
   region_id = var.region_id
 
   listener {
