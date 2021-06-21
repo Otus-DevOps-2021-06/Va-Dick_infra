@@ -18,7 +18,6 @@ cd $FULL_PROJECT_DIR && bundle install
 sudo cat > /etc/systemd/system/puma.service <<EOF
 [Unit]
 Description=Puma service
-After=mongod.service
 [Service]
 Type=simple
 WorkingDirectory=$FULL_PROJECT_DIR
