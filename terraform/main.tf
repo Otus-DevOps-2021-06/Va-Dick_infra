@@ -16,7 +16,8 @@ provider "yandex" {
 
 resource "yandex_compute_instance" "app" {
   name = "reddit-app"
-
+  zone = var.res_zone
+  
   resources {
     cores  = 2
     memory = 2
