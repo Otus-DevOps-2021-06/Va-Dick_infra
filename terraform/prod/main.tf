@@ -2,23 +2,23 @@ module "consul" {
   source = "../modules"
 }
 
-# terraform {
-#   required_providers {
-#     yandex = {
-#       source = "yandex-cloud/yandex"
-#     }
-#   }
-#   backend "s3" {
-#     endpoint                    = "storage.yandexcloud.net"
-#     bucket                      = "terraform-backend"
-#     region                      = "ru-central1"
-#     access_key                  = "123"
-#     secret_key                  = "123"
-#     key                         = "prod/terraform.tfstate"
-#     skip_region_validation      = true
-#     skip_credentials_validation = true
-#   }
-# }
+terraform {
+  required_providers {
+    yandex = {
+      source = "yandex-cloud/yandex"
+    }
+  }
+  backend "s3" {
+    endpoint                    = "storage.yandexcloud.net"
+    bucket                      = "terraform-backend"
+    region                      = "ru-central1"
+    access_key                  = "123"
+    secret_key                  = "123"
+    key                         = "prod/terraform.tfstate"
+    skip_region_validation      = true
+    skip_credentials_validation = true
+  }
+}
 
 provider "yandex" {
   service_account_key_file = var.service_account_key_file
@@ -42,9 +42,9 @@ module "app" {
   internal_ip_address_db = module.db.internal_ip_address_db
   subnet_id              = module.vpc.subnet_id
   deploy_type            = var.deploy_type
-  # depends_on = [
-  #   module.db
-  # ]
+  depends_on = [
+    module.db
+  ]
 }
 
 module "db" {
@@ -55,7 +55,7 @@ module "db" {
   ssh_user         = var.ssh_user
   subnet_id        = module.vpc.subnet_id
   deploy_type      = var.deploy_type
-  # depends_on = [
-  #   module.vpc
-  # ]
+  depends_on = [
+    module.vpc
+  ]
 }
