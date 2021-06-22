@@ -2,23 +2,23 @@ module "consul" {
   source = "../modules"
 }
 
-terraform {
-  required_providers {
-    yandex = {
-      source = "yandex-cloud/yandex"
-    }
-  }
-  backend "s3" {
-    endpoint                    = "storage.yandexcloud.net"
-    bucket                      = "terraform-backend"
-    region                      = "ru-central1"
-    access_key                  = "rLxOzLJkOvzJADSSwQLY"
-    secret_key                  = "_tmHz98shicseNEBFgEvybGxiOazraa3DCetaTkQ"
-    key                         = "stage/terraform.tfstate"
-    skip_region_validation      = true
-    skip_credentials_validation = true
-  }
-}
+# terraform {
+#   required_providers {
+#     yandex = {
+#       source = "yandex-cloud/yandex"
+#     }
+#   }
+#   backend "s3" {
+#     endpoint                    = "storage.yandexcloud.net"
+#     bucket                      = "terraform-backend"
+#     region                      = "ru-central1"
+#     access_key                  = "123"
+#     secret_key                  = "123"
+#     key                         = "stage/terraform.tfstate"
+#     skip_region_validation      = true
+#     skip_credentials_validation = true
+#   }
+# }
 
 provider "yandex" {
   service_account_key_file = var.service_account_key_file
