@@ -42,9 +42,9 @@ module "app" {
   internal_ip_address_db = module.db.internal_ip_address_db
   subnet_id              = module.vpc.subnet_id
   deploy_type            = var.deploy_type
-  depends_on = [
-    module.db
-  ]
+  # depends_on = [
+  #   module.db
+  # ]
 }
 
 module "db" {
@@ -55,7 +55,7 @@ module "db" {
   ssh_user         = var.ssh_user
   subnet_id        = module.vpc.subnet_id
   deploy_type      = var.deploy_type
-  depends_on = [
-    module.vpc
-  ]
+  # depends_on = [
+  #   module.vpc
+  # ]
 }
