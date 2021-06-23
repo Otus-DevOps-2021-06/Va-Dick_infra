@@ -7,7 +7,7 @@
 
 - name: Install git
   apt:
-    name: git
+    name: git=2.17.1
 #    state: latest
     update_cache: true
     install_recommends: true
