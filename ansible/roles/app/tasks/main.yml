@@ -8,7 +8,7 @@
 - name: Install git
   apt:
     name: git
-    state: latest
+#    state: latest
     update_cache: true
     install_recommends: true
 
