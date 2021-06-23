@@ -16,7 +16,7 @@
   git:
     repo: https://github.com/express42/reddit.git
     dest: /home/ubuntu/reddit
-    version: HEAD
+    version: monolith
 
 - name: bundle install
   bundler:
