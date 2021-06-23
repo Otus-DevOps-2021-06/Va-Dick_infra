@@ -56,6 +56,9 @@ class Ansible_inventory:
         instance_service = self.sdk.client(InstanceServiceStub)
         hosts = MessageToDict(instance_service.List(ListInstancesRequest(folder_id=self.arguments.folder_id)))
         hosts_dict = dict()
+        if not hosts.get('instances'):
+            self.hosts_dict = hosts_dict
+            return
         for host in hosts['instances']:
             interface = self.__get_external_ip_addres(host)
             if interface is not None:
