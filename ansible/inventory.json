@@ -1,0 +1,16 @@
+{
+    "app": {
+        "hosts": {
+            "reddit-app-stage": {
+                "ansible_host": "217.28.228.190"
+            }
+        }
+    },
+    "db": {
+        "hosts": {
+            "reddit-db-stage": {
+                "ansible_host": "217.28.229.33"
+            }
+        }
+    }
+}

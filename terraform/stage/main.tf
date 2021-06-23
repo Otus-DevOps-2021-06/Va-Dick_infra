@@ -14,7 +14,7 @@ module "consul" {
 #     region                      = "ru-central1"
 #     access_key                  = "123"
 #     secret_key                  = "123"
-#     key                         = "prod/terraform.tfstate"
+#     key                         = "stage/terraform.tfstate"
 #     skip_region_validation      = true
 #     skip_credentials_validation = true
 #   }

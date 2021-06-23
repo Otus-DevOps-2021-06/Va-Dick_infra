@@ -83,3 +83,22 @@ Done:
 - Create separate modules for app, db, vpc;
 - Task with* (creating backends for storing state files);
 - Task with** (Adding provizgenerov, for automatic deployment of applications);
+
+
+
+
+---
+# Ansible-1
+Done:
+- Main task (Created inventory files, ansible. cfg, clone playbook.yml);
+- Task with * (Created by inventory.json and script main.py to work with it);
+```
+#List of all instances:
+python3 main.py --sa-json-path="/path/to/key.json" --folder-id="***" --list
+
+#Specific instance:
+python3 main.py --sa-json-path="/path/to/key.json" --folder-id="***" --host HOST
+
+#Get information on all commands:
+python3 main.py --help
+```

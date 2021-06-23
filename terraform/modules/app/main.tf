@@ -46,10 +46,10 @@ resource "yandex_compute_instance" "app" {
     destination = "/tmp/deploy.sh"
   }
 
-  provisioner "remote-exec" {
-    inline = [
-      "sudo chmod +x /tmp/deploy.sh",
-      "sudo /tmp/deploy.sh ${var.internal_ip_address_db}",
-    ]
-  }
+  # provisioner "remote-exec" {
+  #   inline = [
+  #     "sudo chmod +x /tmp/deploy.sh",
+  #     "sudo /tmp/deploy.sh ${var.internal_ip_address_db}",
+  #   ]
+  # }
 }
