@@ -46,10 +46,10 @@ resource "yandex_compute_instance" "db" {
     destination = "/tmp/script.sh"
   }
 
-  provisioner "remote-exec" {
-    inline = [
-      "chmod +x /tmp/script.sh",
-      "sudo /tmp/script.sh ${self.network_interface.0.ip_address}",
-    ]
-  }
+  # provisioner "remote-exec" {
+  #   inline = [
+  #     "chmod +x /tmp/script.sh",
+  #     "sudo /tmp/script.sh ${self.network_interface.0.ip_address}",
+  #   ]
+  # }
 }
