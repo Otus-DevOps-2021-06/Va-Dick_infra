@@ -102,3 +102,12 @@ python3 main.py --sa-json-path="/path/to/key.json" --folder-id="***" --host HOST
 #Get information on all commands:
 python3 main.py --help
 ```
+
+
+
+---
+# Ansible-2
+Done:
+- Main task (Created inventory files: reddit_app_multiple_plays.yml, reddit_app_one_play.yml);
+- Splitting files by tags (files: app.yml, db.yml, deploy.yml);
+- Creating poker_app.yml packer_db files.yml for provisioners in packer.
