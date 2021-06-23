@@ -1,7 +1,16 @@
 # Va-Dick_infra
 Va-Dick Infra repository
 
+
 ---
+# Cloud-testapp
+```
+testapp_IP = 217.28.228.50
+testapp_port = 9292
+```
+
+---
+# Cloud-bastion
 
 ## Independent task №1
 
