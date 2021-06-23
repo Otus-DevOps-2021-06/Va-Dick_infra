@@ -63,3 +63,13 @@ Additional task (Automating the creation of a virtual machine)
 ```
 config-scripts/create-reddit-vm.sh
 ```
+
+
+---
+# Terraform-1
+Done:
+- Main task (Creating an instance using terraform)
+- Independent task (Defining variables for the private SSH key and setting the zone)
+- Task with * * (Creating a load balancer using terraform), file `lb.tf`
+- Task with ** (Creating a second instance using terraform and checking the load balancer)
+- Task with ** (Implemented an approach with setting the number of instances via the count resource parameter)
