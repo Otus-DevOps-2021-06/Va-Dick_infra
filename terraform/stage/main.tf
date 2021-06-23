@@ -12,8 +12,8 @@ module "consul" {
 #     endpoint                    = "storage.yandexcloud.net"
 #     bucket                      = "terraform-backend"
 #     region                      = "ru-central1"
-#     access_key                  = ""
-#     secret_key                  = ""
+#     access_key                  = "123"
+#     secret_key                  = "123"
 #     key                         = "stage/terraform.tfstate"
 #     skip_region_validation      = true
 #     skip_credentials_validation = true
