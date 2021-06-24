@@ -1,15 +1,21 @@
-- name: Install Ruby && Bundler
-  hosts: all
+- name: Configure App
+  hosts: app
   become: true
-  tasks:
-  # Установим в цикле все зависимости
-  - name: Install ruby and rubygems and required packages
-    apt:
-      pkg:
-      - ruby-full
-      - ruby-bundler
-      - build-essential
-      - git
-      state: "present"
-      update_cache: true
-      install_recommends: true
+
+  roles:
+    - app
+#- name: Install Ruby && Bundler
+#  hosts: all
+#  become: true
+#  tasks:
+#  # Установим в цикле все зависимости
+#  - name: Install ruby and rubygems and required packages
+#    apt:
+#      pkg:
+#      - ruby-full
+#      - ruby-bundler
+#      - build-essential
+#      - git
+#      state: "present"
+#      update_cache: true
+#      install_recommends: true
