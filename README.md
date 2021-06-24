@@ -111,3 +111,23 @@ Done:
 - Main task (Created inventory files: reddit_app_multiple_plays.yml, reddit_app_one_play.yml);
 - Splitting files by tags (files: app.yml, db.yml, deploy.yml);
 - Creating poker_app.yml packer_db files.yml for provisioners in packer.
+
+
+
+
+---
+# Ansible-3
+Done:
+- Transferred the created playbooks to separate roles
+- Description of two environments (stage and prod)
+- Adding the nginx role community
+- Adding a role for creating users (using Ansible Vault for data encryption)
+- Working with dynamic inventory (creating separate scripts for generating inventory in prod and stage environments):
+
+```
+#Example of running a script in a stage environment
+
+python3 ansible/environments/stage/main.py --sa-json-path="/path/to/key.json" --folder-id="***" --list
+
+python3 ansible/environments/stage/main.py --sa-json-path="/path/to/key.json" --folder-id="***" --host HOST
+```
