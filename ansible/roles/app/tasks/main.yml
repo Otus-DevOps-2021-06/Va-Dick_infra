@@ -5,37 +5,6 @@
   debug:
     msg: "This host is in {{ env }} environment!!!"
 
-- name: Install git
-  apt:
-    name: git=2.17.1
-#    state: latest
-    update_cache: true
-    install_recommends: true
 
-- name: Clone repo
-  git:
-    repo: https://github.com/express42/reddit.git
-    dest: /home/ubuntu/reddit
-    version: monolith
-
-- name: bundle install
-  bundler:
-    state: present
-    chdir: /home/ubuntu/reddit
-
-- name: Add unit file for Puma
-  copy:
-    src: puma.service
-    dest: /etc/systemd/system/puma.service
-  notify: reload puma
-
-- name: Add config for DB connection
-  template:
-    src: db_config.j2
-    dest: /home/ubuntu/db_config
-    owner: ubuntu
-    group: ubuntu
-  notify: reload puma
-
-- name: enable puma
-  systemd: name=puma enabled=yes
+- include: ruby.yml
+- include: puma.yml
