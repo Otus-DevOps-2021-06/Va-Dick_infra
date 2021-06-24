@@ -131,3 +131,36 @@ python3 ansible/environments/stage/main.py --sa-json-path="/path/to/key.json" --
 
 python3 ansible/environments/stage/main.py --sa-json-path="/path/to/key.json" --folder-id="***" --host HOST
 ```
+
+
+
+---
+# Ansible-4
+Done:
+- Local development using Vagrant, refinement of roles for provisioning in Vagrant;
+- Testing roles using Molecule and Testinfra;
+- Switching the image collection by the packer to the use of roles;
+
+Для запуска билда образов db и app, необходимо воспользоваться командой:
+```
+packer build --var-file="./packer/variables.json" ./packer/app.json
+packer build --var-file="./packer/variables.json" ./packer/db.json
+```
+
+To build a project using vagrant:
+```
+cd ansible && vagrant up
+
+# To delete:
+vagrant destroy -f
+```
+
+To run db role testing via molecule:
+```
+cd ./ansible/roles/db && molecule create
+molecule converge
+molecule verify
+
+# To delete:
+molecule destroy --all
+```
